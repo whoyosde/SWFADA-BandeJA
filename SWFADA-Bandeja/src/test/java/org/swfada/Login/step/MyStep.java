@@ -7,5 +7,6 @@ public class MyStep {
     @net.thucydides.core.annotations.Step
     public void queElUsuarioIngresaALaPlataformaBandeja() {
         myPage.open();
+        /* Hola*/
     }
 }
