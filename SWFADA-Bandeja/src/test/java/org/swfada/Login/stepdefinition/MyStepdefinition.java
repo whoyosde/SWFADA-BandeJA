@@ -19,6 +19,7 @@ public class MyStepdefinition {
 
     @Cuando("se inicia sesión mediante usuario {string} y contraseña {string}")
     public void seIniciaSesiónMedianteUsuarioYContraseña(String DNI, String contraseña) {
+     myStep.seIniciaSesiónMedianteUsuarioYContraseña(DNI, contraseña);
     }
 
     @Y("presiono el boton entrar")

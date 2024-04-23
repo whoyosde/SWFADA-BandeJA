@@ -8,4 +8,7 @@ public class MyStep {
     public void queElUsuarioIngresaALaPlataformaBandeja() {
         myPage.open();
     }
+
+    public void seIniciaSesiónMedianteUsuarioYContraseña(String dni, String contraseña) {
+    }
 }
