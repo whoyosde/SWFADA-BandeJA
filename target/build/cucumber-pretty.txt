@@ -1,7 +1,0 @@
-
-@LoginBandeja
-Esquema del escenario: Ingresar a Bandeja                                       [90m# src/test/resources/features/login.feature:16[0m
-  [32mDado [0m[32mque el usuario ingresa a la plataforma Bandeja[0m                           [90m# org.swfada.Login.stepdefinition.MyStepdefinition.queElUsuarioIngresaALaPlataformaBandeja()[0m
-  [32mCuando [0m[32mse inicia sesión mediante usuario [0m[32m[1m"30268264B"[0m[32m y contraseña [0m[32m[1m"30268264B"[0m [90m# org.swfada.Login.stepdefinition.MyStepdefinition.seIniciaSesiónMedianteUsuarioYContraseña(java.lang.String,java.lang.String)[0m
-  [32mY [0m[32mpresiono el boton entrar[0m                                                    [90m# org.swfada.Login.stepdefinition.MyStepdefinition.presionoElBotonEntrar()[0m
-  [32mEntonces [0m[32mse carga las comunicaciones[0m                                          [90m# org.swfada.Login.stepdefinition.MyStepdefinition.seCargaLasComunicaciones()[0m
