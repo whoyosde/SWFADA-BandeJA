@@ -1,0 +1,68 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html lang="es-ES" xml:lang="es-ES" xmlns="http://www.w3.org/1999/xhtml"&gt;<br/>
+ &lt;head&gt; <br/>
+  &lt;meta http-equiv="content-type" content="text/html; charset=utf-8"&gt; <br/>
+  &lt;title&gt;BandeJA&lt;/title&gt; <br/>
+  &lt;link media="screen" rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css"&gt; <br/>
+  &lt;link rel="shortcut icon" type="image/png" href="../instalaciones/imagenes/favicon.png"&gt; <br/>
+  &lt;link media="screen" rel="stylesheet" type="text/css" href="../instalaciones/css/estilo.css"&gt; <br/>
+  &lt;link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Open+Sans:400,600,700&amp;display=swap" rel="stylesheet" type="text/css"&gt; <br/>
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt; <br/>
+  &lt;script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt; <br/>
+  &lt;script type="text/javascript" src="../estilos.js"&gt;&lt;/script&gt; <br/>
+  &lt;script type="text/javascript" src="../modulos/comun/js/jquery-1.9.1.js"&gt;&lt;/script&gt; <br/>
+  &lt;script type="text/javascript" src="../modulos/comun/js/bloqueoPantalla.js"&gt;&lt;/script&gt; <br/>
+  &lt;script type="text/javascript"&gt;<br/>
+	if (!esCompatible()) {<br/>
+		if(!alert('El navegador que está utilizando no es compatible con BandeJA. Por favor use Chrome o IE 11.')){<br/>
+		window.location.reload(); <br/>
+		}<br/>
+	}<br/>
+<br/>
+	function esCompatible() {<br/>
+		const ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object<br/>
+		const msie = ua.indexOf('MSIE '); // IE 10 or older<br/>
+		const trident = ua.indexOf('Trident/'); //IE 11<br/>
+<br/>
+		return (msie &lt;= 0);<br/>
+	}<br/>
+&lt;/script&gt; <br/>
+ &lt;/head&gt; <br/>
+ &lt;body&gt; <br/>
+  &lt;nav class="navbarBandeja navbar-expand-md" style="position: relative !important"&gt; &lt;a class="navbar-brand"&gt; &lt;img id="logoBandeja" class="logoBandeja" src="../instalaciones/imagenes/nuevoLogoBandeJA.png" width="160" alt="Logo BandeJA"&gt; &lt;/a&gt; <br/>
+  &lt;/nav&gt; <br/>
+  &lt;div id="contenedor"&gt; &lt;!-- contenido de la página de selección de sistema --&gt; <br/>
+   &lt;div id="container"&gt; <br/>
+    &lt;div id="contenido-nuevo-inicio" class="border shadow rounded"&gt; <br/>
+     &lt;h2 class="inicioSesion"&gt;Inicio de sesión&lt;/h2&gt; <br/>
+     &lt;form namespace="" id="formDNI" action="indicarProcedimiento.action" method="post"&gt; <br/>
+      &lt;input type="hidden" name="instalacionEscogida" value="BANDEJA" id="formDNI_instalacionEscogida"&gt; <br/>
+      &lt;input type="hidden" name="sistema" value="BANDEJA" id="formDNI_sistema"&gt; <br/>
+      &lt;input type="hidden" name="_csrf" value="459fbba8-bf3c-4e6e-b4be-d20a24da4443"&gt; <br/>
+      &lt;div id="formDNI_" class="error-in"&gt; <br/>
+      &lt;/div&gt; <br/>
+      &lt;div class="row" style="margin-top: 20px"&gt; <br/>
+       &lt;div class="col-sm-12"&gt; <br/>
+        &lt;div class="input-group mb-3"&gt; <br/>
+         &lt;div class="input-group-prepend"&gt; &lt;span class="input-group-text" id="userInputGroup2"&gt;&lt;i class="fa fa-user"&gt;&lt;/i&gt;&lt;/span&gt; <br/>
+         &lt;/div&gt; <br/>
+         &lt;input type="text" id="dni" name="txtDni" placeholder="DNI" onchange="javascript: isReadyForFocus('dni');" class="form-control"&gt; <br/>
+        &lt;/div&gt; <br/>
+       &lt;/div&gt; <br/>
+      &lt;/div&gt; <br/>
+      &lt;div class="row" style="margin-top: 20px"&gt; <br/>
+       &lt;div class="col-sm-12"&gt; <br/>
+        &lt;div class="input-group mb-3"&gt; <br/>
+         &lt;div class="input-group-prepend"&gt; &lt;span class="input-group-text" id="passwordInputGroup2"&gt;&lt;i class="fa fa-lock"&gt;&lt;/i&gt;&lt;/span&gt; <br/>
+         &lt;/div&gt; <br/>
+         &lt;input type="password" id="pw" name="txtPassword" placeholder="Contraseña" onchange="javascript: isReadyForFocus('pw');" class="form-control"&gt; <br/>
+        &lt;/div&gt; <br/>
+       &lt;/div&gt; <br/>
+      &lt;/div&gt; <br/>
+      &lt;div style="display: flex;justify-content: center;"&gt; &lt;button type="submit" class="btn botonLogin"&gt;Entrar&lt;/button&gt; <br/>
+      &lt;/div&gt; <br/>
+     &lt;/form&gt; <br/>
+    &lt;/div&gt; <br/>
+   &lt;/div&gt; <br/>
+  &lt;/div&gt; <br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>

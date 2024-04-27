@@ -1,0 +1,4 @@
+
+@Suite @Login1 @CredencialesValidas
+Scenario: CP01-01: Validacion con credenciales validas [90m# src/test/resources/features/login1.feature:8[0m
+  [32mGiven [0m[32mel usuario navega al sitio web[0m                 [90m# org.swfada.Login1.stepdefinition.LoginDef.usuarioNavegarAlSitio()[0m
