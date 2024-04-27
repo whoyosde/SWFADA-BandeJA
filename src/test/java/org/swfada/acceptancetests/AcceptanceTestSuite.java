@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         stepNotifications=true,
         features="src/test/resources/features",
         glue="org.swfada",
-        tags = "@Login1 and @CredencialesValidas"
+        tags = "@AltaNuevaComunicacionConFirma"
 
 )
 public class AcceptanceTestSuite {

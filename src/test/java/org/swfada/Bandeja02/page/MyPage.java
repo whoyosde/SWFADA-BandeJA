@@ -7,6 +7,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 import java.util.List;
 
+
 public class MyPage extends PageObject {
 
     @FindBy (xpath = "//span[@class='nuevaComunicacion']")

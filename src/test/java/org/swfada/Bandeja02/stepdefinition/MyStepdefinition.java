@@ -6,8 +6,6 @@ import net.thucydides.core.annotations.Steps;
 import org.swfada.Bandeja02.step.MyStep;
 import org.swfada.Bandeja02.step.validations.ValidationStep;
 
-@DefaultUrl("/bandejapru/inicio/indicarInstalacion.action")
-
 public class MyStepdefinition {
 
     @Steps (shared = true)

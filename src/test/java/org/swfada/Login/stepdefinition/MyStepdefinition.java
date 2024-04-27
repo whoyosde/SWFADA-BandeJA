@@ -6,10 +6,13 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import net.thucydides.core.annotations.Steps;
 import org.swfada.Login.step.MyStep;
-
+import org.swfada.Login1.step.LoginStep;
 
 
 public class MyStepdefinition {
+
+ @Steps (shared = true)
+ MyStep Login;
 @Steps
    private MyStep myStep;
     @Dado("que el usuario ingresa a la plataforma Bandeja")
