@@ -3,9 +3,12 @@ Feature: Alta de una nueva comunicación con firma
   Background:
     Given el usuario navega al sitio web
     When ingresa credenciales validas
-    Then el sistema muestra la plataforma Bandeja
+    Then el sistema muestra la pantalla obligaciones para el uso del sistema
 
 Scenario: CP01 - Alta de una nueva comunicación con firma exitosa
+  And presione el botón Aceptar
+  And seleccione el puesto
+
   And da click en nueva comunicación
   And ingresa el asunto
   And selecciona el registro de procedimientos y servicios

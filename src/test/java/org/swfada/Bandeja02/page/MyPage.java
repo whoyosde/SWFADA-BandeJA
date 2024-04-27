@@ -10,6 +10,10 @@ import java.util.List;
 
 public class MyPage extends PageObject {
 
+    @FindBy (xpath ="//button[@class='btn botonLogin' and text()='Aceptar']")
+    protected WebElementFacade btnAceptarObligaciones;
+
+
     @FindBy (xpath = "//span[@class='nuevaComunicacion']")
      protected WebElementFacade iconoNuevaComunicacion;
 

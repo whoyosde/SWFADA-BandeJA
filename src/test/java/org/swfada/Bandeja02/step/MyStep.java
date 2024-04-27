@@ -8,6 +8,11 @@ import org.swfada.Bandeja02.page.MyPage;
 
 public class MyStep extends MyPage {
 
+    @Step ("Click en el botón Aceptar de la pantalla de obligaciones")
+    public void clckBotonAceptarObligaciones(){
+        btnAceptarObligaciones.click();
+    }
+
     @Step ("Click en icono de nueva comunicación")
     public void clickIconoNuevaComunicacion () {
     iconoNuevaComunicacion.click();

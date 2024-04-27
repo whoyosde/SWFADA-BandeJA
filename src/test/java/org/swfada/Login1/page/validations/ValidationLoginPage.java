@@ -6,6 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class ValidationLoginPage extends PageObject {
 
-    @FindBy(xpath ="//img[@id='logoBandeja']")
-    protected WebElementFacade tituloPlataformaBnadeja;
+    @FindBy (xpath = "//h4[@class='modal-title error-title' and text()='Obligaciones para el uso del Sistema']")
+    protected WebElementFacade tituloObligacionesUsoSistema;
+
 }

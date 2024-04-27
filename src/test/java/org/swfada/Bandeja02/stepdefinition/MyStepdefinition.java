@@ -14,6 +14,11 @@ public class MyStepdefinition {
     @Steps (shared = true)
     ValidationStep validate;
 
+    @And("presione el botón Aceptar")
+    public void usuarioClickBtnAceptarObligaciones(){
+        Bandeja02Step.clckBotonAceptarObligaciones();
+    }
+
     @And ("da click en nueva comunicación")
     public void usuarioClickIconoNuevaComunicacion (){
         Bandeja02Step.clickIconoNuevaComunicacion();
