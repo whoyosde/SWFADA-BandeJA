@@ -9,15 +9,18 @@ public class WebSite {
     @Steps(shared = true)
     PageObject bandeja;
 
-    private WebDriver driver;
-    public void cerrarSesion(){
-        if (driver != null) {
-            driver.quit();
-        }
-    }
     @Step("Navegar al sitio web")
     public void navegarAlSitio (String url){
         bandeja.setDefaultBaseUrl(url);
         bandeja.open();
     }
+
+    private WebDriver driver;
+    public void cerrarSesion(){
+    if (driver != null) {
+          driver.quit();
+        }
+    }
+
+
 }

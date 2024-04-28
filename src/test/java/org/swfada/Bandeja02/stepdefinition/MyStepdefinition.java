@@ -1,7 +1,6 @@
 package org.swfada.Bandeja02.stepdefinition;
 
 import io.cucumber.java.en.And;
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Steps;
 import org.swfada.Bandeja02.step.MyStep;
 import org.swfada.Bandeja02.step.validations.ValidationStep;
@@ -17,6 +16,11 @@ public class MyStepdefinition {
     @And("presione el botón Aceptar")
     public void usuarioClickBtnAceptarObligaciones(){
         Bandeja02Step.clckBotonAceptarObligaciones();
+    }
+
+    @And("seleccione el puesto de trabajo")
+    public void usuarioSeleccionaPuestoTrabajo (){
+        Bandeja02Step.seleccionarPuestoTrabajoLista(2);
     }
 
     @And ("da click en nueva comunicación")

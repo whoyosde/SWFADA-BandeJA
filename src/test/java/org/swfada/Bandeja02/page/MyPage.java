@@ -3,7 +3,6 @@ package org.swfada.Bandeja02.page;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.annotations.DefaultUrl;
 
 import java.util.List;
 
@@ -13,6 +12,8 @@ public class MyPage extends PageObject {
     @FindBy (xpath ="//button[@class='btn botonLogin' and text()='Aceptar']")
     protected WebElementFacade btnAceptarObligaciones;
 
+    @FindBy (xpath = "//select[@id='usuarioSeleccionado']")
+    protected List<WebElementFacade> opcionPuestoTrabajo;
 
     @FindBy (xpath = "//span[@class='nuevaComunicacion']")
      protected WebElementFacade iconoNuevaComunicacion;
