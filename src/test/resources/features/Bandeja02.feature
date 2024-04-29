@@ -1,16 +1,20 @@
 @AltaNuevaComunicacionConFirma
-Feature: Alta de una nueva comunicación con firma
+Feature: Plataforma Bandeja
+  Como usuario comun
+  Quiero ingresar a la plataforma Bandeja
+  Para gestinar las comunicaciones.
   Background:
-    Given el usuario navega al sitio web
-    When ingresa credenciales validas
-    Then el sistema muestra la pantalla obligaciones para el uso del sistema
-
+    Given que el usuario ingresa a la plataforma Bandeja
+    When se inicia sesión mediante usuario "30268264B" y contraseña "30268264B"
+    Then presiono el boton Aceptar obligaciones
+    And presiono el boton Entrar
+    And presiono el boton Aceptar obligaciones
+    When selecciono el puesto de trabajo "ANALISTA FUNCIONAL (D.G. PATRIMONIO)"
+    And presiono el boton Acceder
 
 Scenario: CP01 - Alta de una nueva comunicación con firma exitosa
-  And presione el botón Aceptar
-  And seleccione el puesto de trabajo
-  And presione el botón Acceder
-  When da click en nueva comunicación
+  And da click en nueva comunicación
+  Then puede visualizar la ventana
   And ingresa el asunto
   And selecciona el registro de procedimientos y servicios
   And ingresa el código expediente relacionado
