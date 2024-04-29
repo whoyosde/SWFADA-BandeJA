@@ -26,7 +26,7 @@ Feature: Plataforma Bandeja
     Examples:
     Ejemplos:
       | asunto                     | procedimiento                        | codigo  | destino         | fecha limite |
-      | Prueba de Automatización02 | Indemnización por Razón del Servicio | AUTO123 | D.G. PATRIMONIO | 27/04/2024   |
+      | Prueba de Automatización02 | Indemnización por Razón del Servicio | EXP123 | D.G. PATRIMONIO | 27/04/2024   |
 
 
 

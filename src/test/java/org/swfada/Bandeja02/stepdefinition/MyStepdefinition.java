@@ -27,4 +27,14 @@ public class MyStepdefinition {
     public void seMuestraLaVentanaAltaDeComunicación() {
         myStep.seMuestraLaVentanaAltaDeComunicación();
     }
+
+    @And("registro el asunto {string}")
+    public void registroElAsunto(String asunto) {
+        myStep.registroElAsunto(asunto);
+    }
+
+    @And("selecciono el registro de procedimientos y servicios {string}")
+    public void seleccionoElRegistroDeProcedimientosYServicios(String nombreProcedimiento) {
+        myStep.seleccionoElRegistroDeProcedimientosYServicios(nombreProcedimiento);
+    }
 }

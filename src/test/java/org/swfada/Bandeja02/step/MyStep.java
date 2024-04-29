@@ -22,4 +22,13 @@ public class MyStep extends ScenarioSteps {
     public void seMuestraLaVentanaAltaDeComunicación() {
         myPage.sistemaMuesraVentanaAltaComunicacin();
     }
+
+    @net.thucydides.core.annotations.Step
+    public void registroElAsunto(String asunto) {
+        myPage.usuarioRegistraAsunto(asunto);
+    }
+
+    public void seleccionoElRegistroDeProcedimientosYServicios(String nombreProcedimiento) {
+        myPage.usuarioSeleccionaProcedimientoServicio(nombreProcedimiento);
+    }
 }

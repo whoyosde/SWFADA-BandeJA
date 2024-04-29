@@ -17,6 +17,12 @@ public class MyPage extends PageObject {
     @FindBy (xpath = "//a/span/img[@title='Nueva comunicacion']")
     private WebElementFacade NuevaComunicacion;
 
+    @FindBy (xpath = "//input[@id='descripcionAltaComunicacion']")
+    private WebElementFacade txt_asunto;
+
+    @FindBy (xpath = "(//li/input[@class=\"select2-search__field\"])[1]")
+    private WebElementFacade selecProcedimiento;
+
     public void ValidarBandeja() {
         WebDriverWait wait = new WebDriverWait(getDriver(), 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logoBandeja")));
@@ -32,9 +38,18 @@ public class MyPage extends PageObject {
     }
 
     public void sistemaMuesraVentanaAltaComunicacin() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 60);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class=\"modal-content\"])[1]")));
+        WebDriverWait wait = new WebDriverWait(getDriver(), 180);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='modal-content']")));
         WebElement titulo = getDriver().findElement(By.tagName("h4"));
         assertEquals("Alta de comunicación", titulo.getText());
     }
+    public void usuarioRegistraAsunto(String asunto) {
+        txt_asunto.sendKeys(asunto);
+    }
+    public void usuarioSeleccionaProcedimientoServicio(String procedimiento) {
+        selecProcedimiento.click();
+        WebElement selectOptions = getDriver().findElement(By.xpath("//optgroup/option[contains(text(),'" + procedimiento + "')]"));
+        clickOn(selectOptions);
+    }
+
 }
