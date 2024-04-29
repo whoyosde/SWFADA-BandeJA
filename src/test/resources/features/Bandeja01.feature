@@ -1,5 +1,5 @@
 #language: es
-@LoginBandeja
+@AltaSinFirma
 Característica: Plataforma Bandeja
   Como usuario comun
   Quiero ingresar a la plataforma Bandeja

@@ -78,7 +78,6 @@ public class MyPage extends PageObject {
     }
 
     public void AdjuntarDocumento() {
-
         // Específica la ruta absoluta del archivo que deseas subir
         File file = new File("C:\\Users\\whoyosde\\Documents\\ADA\\DOC01.pdf");
 
@@ -98,6 +97,7 @@ public class MyPage extends PageObject {
     }
 
     public void PulsarEnviarSinFirma() {
+
         btnEnviarSinFirma.click();
     }
 
