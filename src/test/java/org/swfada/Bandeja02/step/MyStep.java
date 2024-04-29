@@ -1,8 +1,7 @@
 package org.swfada.Bandeja02.step;
 
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.swfada.Bandeja02.page.MyPage;
@@ -10,8 +9,6 @@ import org.swfada.Bandeja02.page.MyPage;
 
 public class MyStep extends MyPage {
 
-    @Steps(shared = true)
-    MyStep Bandeja02Step;
 
     @Step ("Click en el botón Aceptar de la pantalla de obligaciones")
     public void clckBotonAceptarObligaciones(){
@@ -19,16 +16,19 @@ public class MyStep extends MyPage {
     }
 
     @Step ("Seleccionar puesto de trabajo")
-    public void seleccionarPuestoTrabajoLista (int cantidad){
-        for (int i=0; i<cantidad; i++){
-            Actions act = new Actions (getDriver());
-            act.click (opcionPuestoTrabajo.get(i)).perform();
-        }
+    public void seleccionarPuestoTrabajoLista (String opcion){
+        WebElement dropdown = find(By.id("usuarioSeleccionado"));
+        selectFromDropdown(dropdown, opcion);
+    }
+
+    @Step ("Presionar el botón Acceder")
+    public void clickBtnAcceder (){
+        btnAcceder.click();
     }
 
     @Step ("Click en icono de nueva comunicación")
     public void clickIconoNuevaComunicacion () {
-    iconoNuevaComunicacion.click();
+        iconoNuevaComunicacion.click();
     }
 
     @Step ("Ingresar asunto")

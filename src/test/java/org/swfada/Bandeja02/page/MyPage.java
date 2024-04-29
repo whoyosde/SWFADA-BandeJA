@@ -12,10 +12,10 @@ public class MyPage extends PageObject {
     @FindBy (xpath ="//button[@class='btn botonLogin' and text()='Aceptar']")
     protected WebElementFacade btnAceptarObligaciones;
 
-    @FindBy (xpath = "//select[@id='usuarioSeleccionado']")
-    protected List<WebElementFacade> opcionPuestoTrabajo;
+   @FindBy (xpath = "//button[@class='btn botonLogin' and text()='Acceder']")
+   protected WebElementFacade btnAcceder;
 
-    @FindBy (xpath = "//span[@class='nuevaComunicacion']")
+    @FindBy (xpath = "//a[@class='nav-link' and @href='#' and @aria-label='Nueva comunicacion']/span[@class='nuevaComunicacion']")
      protected WebElementFacade iconoNuevaComunicacion;
 
     @FindBy (xpath = "//input[@id='descripcionAltaComunicacion']")
