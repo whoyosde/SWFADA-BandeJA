@@ -7,11 +7,11 @@ import org.swfada.Bandeja02.page.MyPage;
 public class MyStep extends ScenarioSteps {
     private MyPage myPage;
 
-    @net.thucydides.core.annotations.Step
+    //@net.thucydides.core.annotations.Step
 
-    public void queMeEncuentroUbicadoEnBandeja() {
-        myPage.ValidarBandeja();
-    }
+    //public void queMeEncuentroUbicadoEnBandeja() {
+      //  myPage.ValidarBandeja();
+    //}
 
     @net.thucydides.core.annotations.Step
     public void presionoEnNuevaComunicación() {
@@ -28,7 +28,36 @@ public class MyStep extends ScenarioSteps {
         myPage.usuarioRegistraAsunto(asunto);
     }
 
+    @net.thucydides.core.annotations.Step
     public void seleccionoElRegistroDeProcedimientosYServicios(String nombreProcedimiento) {
         myPage.usuarioSeleccionaProcedimientoServicio(nombreProcedimiento);
+    }
+
+    @net.thucydides.core.annotations.Step
+    public void registroElCódigoExpedienteRelacionado(String codigoExpediente) {
+        myPage.usuarioIngresaCodigoExpediente(codigoExpediente);
+    }
+    @net.thucydides.core.annotations.Step
+    public void anexoDocumento() {
+        myPage.usuarioAnexaDocumento();
+    }
+
+    @net.thucydides.core.annotations.Step
+    public void SeleccionoElDestinoDeComunicación(String destino) {
+        myPage.usuarioSeleccionaDestinoComunicacion(destino);
+    }
+
+    @net.thucydides.core.annotations.Step
+    public void registroLaFechaLimite(String fecha) {
+        myPage.usuarioRegsitraFechaLimite(fecha);
+    }
+
+    @net.thucydides.core.annotations.Step
+    public void presionoElBotónEnviarAPortafirmas() {
+        myPage.presionoElBotónEnviarAPortafirmas();
+    }
+
+    public void elSistemaPresentaLaVentanaEnviarPeticiónAPortFirmas() {
+        myPage.usuarioVisualizaVentanaPeticionAPortaFirmas();
     }
 }

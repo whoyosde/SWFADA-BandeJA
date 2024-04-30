@@ -23,6 +23,21 @@ public class MyPage extends PageObject {
     @FindBy (xpath = "(//li/input[@class=\"select2-search__field\"])[1]")
     private WebElementFacade selecProcedimiento;
 
+    @FindBy (xpath = "//input[@id='expedienteRelacionadoAltaComunicacion']")
+    private WebElementFacade txt_codigoExpedienteRelacionado;
+
+    @FindBy(id = "fileselectAltaDoc")
+    private WebElementFacade adjuntarDoc;
+
+    @FindBy(id = "destinoComunicacion")
+    private WebElementFacade campoDestino;
+
+    @FindBy(id = "fechaLimiteAltaComunicacion")
+    private WebElementFacade campoFecha;
+
+    @FindBy (id = "subirPortaFDoc")
+    private WebElementFacade btnEnviarPortafirmas;
+
     public void ValidarBandeja() {
         WebDriverWait wait = new WebDriverWait(getDriver(), 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logoBandeja")));
@@ -52,4 +67,36 @@ public class MyPage extends PageObject {
         clickOn(selectOptions);
     }
 
+    public void usuarioIngresaCodigoExpediente(String codigoExpediente) {
+        txt_codigoExpedienteRelacionado.sendKeys(codigoExpediente);
+    }
+
+    public void usuarioAnexaDocumento() {
+        // Específica la ruta absoluta del archivo que deseas subir
+        File file = new File("C:\\Empresa\\DocumentosTest\\DOC01.pdf");
+
+        // Envía la ruta del archivo al elemento de entrada de archivo
+        adjuntarDoc.sendKeys(file.getAbsolutePath());
+    }
+
+    public void usuarioSeleccionaDestinoComunicacion(String destino) {
+        campoDestino.sendKeys(destino);
+        WebElement Destino = getDriver().findElement(By.xpath("//span[contains(text(),'" + destino + "')]"));
+        Destino.click();
+    }
+
+    public void usuarioRegsitraFechaLimite(String fecha) {
+        campoFecha.sendKeys(fecha);
+    }
+
+    public void presionoElBotónEnviarAPortafirmas() {
+        btnEnviarPortafirmas.click();
+    }
+
+    public void usuarioVisualizaVentanaPeticionAPortaFirmas() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='modalFirma']")));
+        WebElement tituloPeticionPortafirmas = getDriver().findElement(By.cssSelector("#modalFirma .modal-dialog .modal-content .modal-header h4"));
+        assertEquals("Enviar petición a Port@firmas", tituloPeticionPortafirmas.getText());
+    }
 }

@@ -35,4 +35,7 @@ public class MyStep {
         myPage.PulsarAcceder();
     }
 
+    public void ValidoQueMeEncuentroEnLaPlataformaBandeja() {
+        myPage.ValidarPlataformaBandeja();
+    }
 }
