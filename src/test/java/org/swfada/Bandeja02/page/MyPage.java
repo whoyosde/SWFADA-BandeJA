@@ -7,10 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import java.io.File;
+
 
 public class MyPage extends PageObject {
 
@@ -37,6 +37,15 @@ public class MyPage extends PageObject {
 
     @FindBy (id = "subirPortaFDoc")
     private WebElementFacade btnEnviarPortafirmas;
+
+    @FindBy (xpath = "//td[@class='contenido_tabla_portlet cabeceraTabla']/div[@class='form-check']")
+    private WebElementFacade chkFrimar;
+
+    @FindBy (id = "busqueda")
+    private WebElementFacade txt_busqueda;
+
+    @FindBy (id = "buscarFirmante")
+    private WebElementFacade btnBuscar;
 
     public void ValidarBandeja() {
         WebDriverWait wait = new WebDriverWait(getDriver(), 60);
@@ -99,4 +108,21 @@ public class MyPage extends PageObject {
         WebElement tituloPeticionPortafirmas = getDriver().findElement(By.cssSelector("#modalFirma .modal-dialog .modal-content .modal-header h4"));
         assertEquals("Enviar petición a Port@firmas", tituloPeticionPortafirmas.getText());
     }
+
+    public void usuarioSeleccionaDocumentoAFirmar() {
+        chkFrimar.click();
+    }
+
+    public void usuarioIngresaNombreFirmante(String nombreFirmante) {
+        txt_busqueda.sendKeys(nombreFirmante);
+    }
+
+    public void usuarioPresionaBotonBuscar() {
+        btnBuscar.click();
+        WebDriverWait wait = new WebDriverWait(getDriver(), 5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombreFirmante_0")));
+        WebElement firmante = getDriver().findElement(By.id("nombreFirmante_0"));
+        assertTrue(firmante.isDisplayed());
+    }
+
 }

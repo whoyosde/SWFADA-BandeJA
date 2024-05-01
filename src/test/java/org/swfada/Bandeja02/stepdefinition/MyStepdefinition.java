@@ -1,8 +1,6 @@
 package org.swfada.Bandeja02.stepdefinition;
 
 import io.cucumber.java.en.And;
-
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
@@ -12,11 +10,6 @@ import org.swfada.Bandeja02.step.MyStep;
 public class MyStepdefinition {
     @Steps
     MyStep myStep;
-
-    //@Given("que me encuentro ubicado en Bandeja")
-    //public void queMeEncuentroUbicadoEnBandeja() {
-      //  myStep.queMeEncuentroUbicadoEnBandeja();
-    //}
 
     @When("presiono en nueva comunicación")
     public void presionoEnNuevaComunicación() {
@@ -58,13 +51,30 @@ public class MyStepdefinition {
         myStep.registroLaFechaLimite(fecha);
     }
 
-    @And("presiono el botón Enviar a Portafirmas")
+    @When("presiono el botón Enviar a Portafirmas")
     public void presionoElBotónEnviarAPortafirmas() {
         myStep.presionoElBotónEnviarAPortafirmas();
     }
 
-    @And("el sistema presenta la ventana Enviar petición a Port@firmas")
+    @Then("el sistema presenta la ventana Enviar petición a Port@firmas")
     public void elSistemaPresentaLaVentanaEnviarPeticiónAPortFirmas() {
         myStep.elSistemaPresentaLaVentanaEnviarPeticiónAPortFirmas();
     }
+
+    @And("selecciono el documento a firmar {string}")
+    public void seleccionoElDocumentoAFirmar(String nombreDocumento) {
+        myStep.seleccionoElDocumentoAFirmar();
+    }
+
+    @And("ingresar el nombre del firmante {string}")
+    public void ingresarElNombreDelFirmante(String nombreFirmante) {
+        myStep.ingresarElNombreDelFirmante(nombreFirmante);
+
+    }
+
+    @When("presione el botón Buscar")
+    public void presioneElBotónBuscar() {
+        myStep.presioneElBotónBuscar();
+    }
+
 }

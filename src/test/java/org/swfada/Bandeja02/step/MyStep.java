@@ -7,12 +7,6 @@ import org.swfada.Bandeja02.page.MyPage;
 public class MyStep extends ScenarioSteps {
     private MyPage myPage;
 
-    //@net.thucydides.core.annotations.Step
-
-    //public void queMeEncuentroUbicadoEnBandeja() {
-      //  myPage.ValidarBandeja();
-    //}
-
     @net.thucydides.core.annotations.Step
     public void presionoEnNuevaComunicación() {
         myPage.usuarioPresionaEnNuevaComunicacion();
@@ -57,7 +51,21 @@ public class MyStep extends ScenarioSteps {
         myPage.presionoElBotónEnviarAPortafirmas();
     }
 
+    @net.thucydides.core.annotations.Step
     public void elSistemaPresentaLaVentanaEnviarPeticiónAPortFirmas() {
         myPage.usuarioVisualizaVentanaPeticionAPortaFirmas();
     }
+
+    public void seleccionoElDocumentoAFirmar() {
+        myPage.usuarioSeleccionaDocumentoAFirmar();
+    }
+
+    public void ingresarElNombreDelFirmante(String nombreFirmante) {
+        myPage.usuarioIngresaNombreFirmante(nombreFirmante);
+    }
+
+    public void presioneElBotónBuscar() {
+        myPage.usuarioPresionaBotonBuscar();
+    }
+
 }

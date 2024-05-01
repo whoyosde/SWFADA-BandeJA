@@ -21,12 +21,19 @@ Feature: Plataforma Bandeja
     And anexo documento
     And selecciono el destino de comunicación "<destino>"
     And registro la fecha limite "<fecha limite>"
-    And presiono el botón Enviar a Portafirmas
-    And el sistema presenta la ventana Enviar petición a Port@firmas
+    When presiono el botón Enviar a Portafirmas
+    Then el sistema presenta la ventana Enviar petición a Port@firmas
+    And selecciono el documento a firmar "<nombre documento>"
+    And ingresar el nombre del firmante "<nombre firmante>"
+    When presione el botón Buscar
+
+
+
+
     Examples:
     Ejemplos:
-      | asunto                     | procedimiento                        | codigo   | destino         | fecha limite |
-      | Prueba de Automatización03 | Indemnización por Razón del Servicio | EXP123  | D.G. PATRIMONIO | 27/08/2024   |
+      | asunto                     | procedimiento                        | codigo   | destino         | fecha limite | nombre documento  | nombre firmante  |
+      | Prueba de Automatización03 | Indemnización por Razón del Servicio | EXP123  | AGENCIA DIGITAL DE ANDALUCIA (ADA) | 27/08/2024   | DOC01.pdf | Usuario 1 Pruebas Rendimiento |
 
 
 
