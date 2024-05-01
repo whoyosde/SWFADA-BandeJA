@@ -31,7 +31,6 @@ Feature: Plataforma Bandeja
 
 
     Examples:
-    Ejemplos:
       | asunto                     | procedimiento                        | codigo   | destino         | fecha limite | nombre documento  | nombre firmante  |
       | Prueba de Automatización03 | Indemnización por Razón del Servicio | EXP123  | AGENCIA DIGITAL DE ANDALUCIA (ADA) | 27/08/2024   | DOC01.pdf | Usuario 1 Pruebas Rendimiento |
 

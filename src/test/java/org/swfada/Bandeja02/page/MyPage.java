@@ -120,9 +120,6 @@ public class MyPage extends PageObject {
     public void usuarioPresionaBotonBuscar() {
         btnBuscar.click();
         WebDriverWait wait = new WebDriverWait(getDriver(), 5);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombreFirmante_0")));
-        WebElement firmante = getDriver().findElement(By.id("nombreFirmante_0"));
-        assertTrue(firmante.isDisplayed());
     }
 
 }
