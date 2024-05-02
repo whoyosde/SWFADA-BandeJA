@@ -17,6 +17,10 @@ public class MyPage extends PageObject {
     @FindBy (xpath = "//a/span/img[@title='Nueva comunicacion']")
     private WebElementFacade NuevaComunicacion;
 
+    @FindBy (id="codigoFirmante_0")
+    private WebElementFacade añadirFirmante1;
+
+
     @FindBy (xpath = "//input[@id='descripcionAltaComunicacion']")
     private WebElementFacade txt_asunto;
 
@@ -119,7 +123,8 @@ public class MyPage extends PageObject {
 
     public void usuarioPresionaBotonBuscar() {
         btnBuscar.click();
-        WebDriverWait wait = new WebDriverWait(getDriver(), 5);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("row_0")));
     }
 
 }

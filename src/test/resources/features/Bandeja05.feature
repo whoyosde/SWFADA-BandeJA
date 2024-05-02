@@ -1,4 +1,4 @@
-@ReenviarComunicacion
+@AsignarComunicacionEstadoPendiente
 Feature: Plataforma Bandeja
   Como usuario comun
   Quiero ingresar a la plataforma Bandeja
@@ -12,14 +12,5 @@ Feature: Plataforma Bandeja
     And presiono el boton Acceder
     Then valido que me encuentro en la plataforma Bandeja
 
-  Scenario:Reenvío de comunicación exitosa
-    And selecciono una comunicación
-    When presiono el icono Reenviar
-    Then el sistema muestra la ventana Reenvio de la Comunicación
-    And selecciono el destino de la comunicación "<destino>"
-    When presiono el botón Reenviar
-    Then sistema muestra mensaje de confirmación de reenvío
-
-    Examples:
-      | destino                    |
-      | AGENCIA DIGITAL DE ANDALUCIA (ADA) |
+    Scenario: Asignación de comunicación en estado pendiente
+      And selecciono comunicación
