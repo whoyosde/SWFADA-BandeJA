@@ -14,4 +14,9 @@ Feature: Plataforma Bandeja
 
     Scenario: Asignación de comunicación en estado pendiente
       And selecciono comunicación
-      And presiono el icono Asignar
+      When presiono el icono Asignar
+      Then el sistema muestra la ventana Asignacion de la Comunicación
+      And selecciono el nombre de la persona a asignar
+      And presiono el icono de asignación
+      And presiono el botón Aceptar
+
