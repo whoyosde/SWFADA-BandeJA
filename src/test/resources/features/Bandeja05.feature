@@ -14,3 +14,4 @@ Feature: Plataforma Bandeja
 
     Scenario: Asignación de comunicación en estado pendiente
       And selecciono comunicación
+      And presiono el icono Asignar

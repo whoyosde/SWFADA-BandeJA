@@ -11,8 +11,12 @@ public class MyStepdefinition {
 
     @And ("selecciono comunicación")
     public void seleccionoComunicación(){
-
+        myStep.seleccionoComunicación();
     }
 
 
+    @And("presiono el icono Asignar")
+    public void presionoElIconoAsignar() {
+        myStep.presionoElIconoAsignar();
+    }
 }
