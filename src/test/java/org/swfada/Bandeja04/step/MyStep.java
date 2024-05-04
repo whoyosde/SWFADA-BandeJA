@@ -20,4 +20,8 @@ public class MyStep extends ScenarioSteps {
     public void elSistemaMuestraLaVentanaInformaciónDetallada() {
         myPage.usuarioVisualizaVentanaInformacionDetallada();
     }
+
+    public void resionoElIconoDescargarDccumentos() {
+        myPage.usuarioPresionaDescargarDocumentos();
+    }
 }

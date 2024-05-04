@@ -24,4 +24,9 @@ public class MyStepdefinition {
     public void elSistemaMuestraLaVentanaInformaciónDetallada() {
         myStep.elSistemaMuestraLaVentanaInformaciónDetallada();
     }
+
+    @And("presiono el icono Descargar Dccumentos")
+    public void presionoElIconoDescargarDccumentos() {
+        myStep.resionoElIconoDescargarDccumentos();
+    }
 }

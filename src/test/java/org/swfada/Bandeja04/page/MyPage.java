@@ -18,6 +18,9 @@ public class MyPage extends PageObject {
     @FindBy (xpath = "//table[@id='resultadoComunicacionesRecibidas']/tbody/tr")
     private List<WebElementFacade> filas;
 
+    @FindBy (id = "descargarZip")
+    private WebElementFacade btnDescargarDocumento;
+
     WebElement filaSeleccionada;
 
     public void usuarioSeleccionaComunicacionLista() {
@@ -37,17 +40,19 @@ public class MyPage extends PageObject {
     public void usuarioPresionaIconoInformacionDetallada() {
 
         WebElement iconoInformacionDetallada = filaSeleccionada.findElement(By.xpath(".//img[@alt='informacion']"));
-        WebDriverWait wait1 = new WebDriverWait (getDriver(), 6);
+        WebDriverWait wait1 = new WebDriverWait (getDriver(), 60);
         iconoInformacionDetallada.click();
-        WebDriverWait wait2 = new WebDriverWait (getDriver(), 10);
-        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[@class='modal-title' and contains(text(), 'Información detallada')]")));
-        WebElement tituloInformacionDetallada = getDriver().findElement(By.xpath("//h4[@class='modal-title' and contains(text(), 'Información detallada')"));
-        assertTrue(tituloInformacionDetallada.isDisplayed());
+        WebDriverWait wait2 = new WebDriverWait (getDriver(), 8);
     }
 
     public void usuarioVisualizaVentanaInformacionDetallada() {
 
         WebElement tituloInformacionDetallada = getDriver().findElement(By.cssSelector("#modal > div > div > div.modal-header > h4"));
         assertTrue(tituloInformacionDetallada.getText().contains("Información detallada"));
+    }
+
+    public void usuarioPresionaDescargarDocumentos() {
+        btnDescargarDocumento.click();
+        WebDriverWait wait1 = new WebDriverWait (getDriver(), 10);
     }
 }

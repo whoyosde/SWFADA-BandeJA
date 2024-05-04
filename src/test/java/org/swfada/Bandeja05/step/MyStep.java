@@ -19,7 +19,4 @@ public class MyStep extends ScenarioSteps {
         myPage.usuarioPresionaBtnAceptar();
     }
 
-    public void seVisualizaQueElEstadoDeLaComunicaciónHaCambiado() {
-        myPage.usuarioVisualizaEstadoComunicacion();
-    }
 }

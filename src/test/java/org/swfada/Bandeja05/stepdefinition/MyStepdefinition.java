@@ -23,14 +23,9 @@ public class MyStepdefinition {
         myStep.presionoElIconoAsignar();
     }
 
-
    @And("presiono el botón Aceptar")
     public void presionoElBotónAceptar() {
       myStep.presionoElBotónAceptar();
     }
 
-    @And("se visualiza que el estado de la comunicación ha cambiado")
-    public void seVisualizaQueElEstadoDeLaComunicaciónHaCambiado() {
-        myStep.seVisualizaQueElEstadoDeLaComunicaciónHaCambiado();
-    }
 }

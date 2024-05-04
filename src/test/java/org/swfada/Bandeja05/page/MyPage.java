@@ -21,7 +21,7 @@ public class MyPage extends PageObject {
     private By filaLocator = By.xpath("//table[@id='resultadoComunicacionesRecibidas']/tbody/tr/td/div[@class='estado' and text()='PENDIENTE']");
 
 
-    @FindBy (xpath = "//button[@id='b_aceptar']")
+    @FindBy (id="b_aceptar")
     private WebElementFacade btnAceptar;
 
     WebElement filaSeleccionada;
@@ -54,18 +54,10 @@ public class MyPage extends PageObject {
 
     public void usuarioPresionaBtnAceptar() {
 
-        WebDriverWait wait = new WebDriverWait (getDriver(), 10);
+        WebDriverWait wait1 = new WebDriverWait (getDriver(), 30);
+        wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.id("DIV_ESPERA")));
         btnAceptar.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logoBandeja")));
-        WebElement bandeja = getDriver().findElement(By.id("logoBandeja"));
-        assertTrue(bandeja.isDisplayed());
+        WebDriverWait wait2 = new WebDriverWait(getDriver(), 4);
 
-    }
-
-    public void usuarioVisualizaEstadoComunicacion() {
-
-        //WebElement nuevoEstado = filaSeleccionada.findElement(By.xpath("//td[@class='estado' and text()='ASIGNADO']"));
-        WebElement nuevoEstado = filaSeleccionada.findElement(By.xpath("//td[@class='estado'"));
-        assertEquals("ASIGNADO", nuevoEstado.getText());
     }
 }

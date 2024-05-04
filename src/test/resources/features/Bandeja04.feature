@@ -16,5 +16,6 @@ Feature: Plataforma Bandeja
       And selecciono una comunicación de la lista
       When presiono el icono Información Detallada
       And el sistema muestra la ventana Información Detallada
+      And presiono el icono Descargar Dccumentos
 
 
