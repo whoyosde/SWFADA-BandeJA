@@ -15,20 +15,11 @@ public class MyStep extends ScenarioSteps {
     public void presionoElIconoAsignar() {
         myPage.usuarioPresionaIconoAsignar();
     }
-
-    public void elSistemaMuestraLaVentanaAsignacionDeLaComunicación() {
-        myPage.usuarioVisualizaVentanaAsignacionComunicacion();
-    }
-
-    public void seleccionoElNombreDeLaPersonaAAsignar() {
-        myPage.usuarioSeleccionaNombrePersonaAsignar();
-    }
-
-    public void presionoElIconoDeAsignación() {
-        myPage.usuarioPresionaIconoAsignacion();
-    }
-
     public void presionoElBotónAceptar() {
         myPage.usuarioPresionaBtnAceptar();
+    }
+
+    public void seVisualizaQueElEstadoDeLaComunicaciónHaCambiado() {
+        myPage.usuarioVisualizaEstadoComunicacion();
     }
 }

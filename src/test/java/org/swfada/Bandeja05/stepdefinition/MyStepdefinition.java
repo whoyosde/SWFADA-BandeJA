@@ -1,4 +1,5 @@
 package org.swfada.Bandeja05.stepdefinition;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,23 +23,14 @@ public class MyStepdefinition {
         myStep.presionoElIconoAsignar();
     }
 
-    @Then("el sistema muestra la ventana Asignacion de la Comunicación")
-    public void elSistemaMuestraLaVentanaAsignacionDeLaComunicación() {
-        myStep.elSistemaMuestraLaVentanaAsignacionDeLaComunicación();
-    }
 
-    @And("selecciono el nombre de la persona a asignar")
-    public void seleccionoElNombreDeLaPersonaAAsignar() {
-        myStep.seleccionoElNombreDeLaPersonaAAsignar();
-    }
-
-    @And("presiono el icono de asignación")
-    public void presionoElIconoDeAsignación() {
-        myStep.presionoElIconoDeAsignación();
-    }
-
-    @And("presiono el botón Aceptar")
+   @And("presiono el botón Aceptar")
     public void presionoElBotónAceptar() {
-        myStep.presionoElBotónAceptar();
+      myStep.presionoElBotónAceptar();
+    }
+
+    @And("se visualiza que el estado de la comunicación ha cambiado")
+    public void seVisualizaQueElEstadoDeLaComunicaciónHaCambiado() {
+        myStep.seVisualizaQueElEstadoDeLaComunicaciónHaCambiado();
     }
 }

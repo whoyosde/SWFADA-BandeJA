@@ -1,4 +1,4 @@
-@AsignarComunicacionEstadoPendiente
+@DescargarDocumentoZip
 Feature: Plataforma Bandeja
   Como usuario comun
   Quiero ingresar a la plataforma Bandeja
@@ -12,9 +12,9 @@ Feature: Plataforma Bandeja
     And presiono el boton Acceder
     Then valido que me encuentro en la plataforma Bandeja
 
-    Scenario: Asignación de comunicación en estado pendiente
-      And selecciono comunicación
-      When presiono el icono Asignar
-      And presiono el botón Aceptar
-      And se visualiza que el estado de la comunicación ha cambiado
+    Scenario: Descarga de documento zip exitoso
+      And selecciono una comunicación de la lista
+      When presiono el icono Información Detallada
+      And el sistema muestra la ventana Información Detallada
+
 
