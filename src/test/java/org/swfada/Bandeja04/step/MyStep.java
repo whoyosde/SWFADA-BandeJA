@@ -3,6 +3,8 @@ package org.swfada.Bandeja04.step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.swfada.Bandeja04.page.MyPage;
 
+import java.awt.*;
+
 public class MyStep extends ScenarioSteps {
 
     private MyPage myPage;
@@ -21,7 +23,11 @@ public class MyStep extends ScenarioSteps {
         myPage.usuarioVisualizaVentanaInformacionDetallada();
     }
 
-    public void resionoElIconoDescargarDccumentos() {
+    public void resionoElIconoDescargarDccumentos()throws AWTException {
         myPage.usuarioPresionaDescargarDocumentos();
+    }
+
+    public void validoElDocumentoDescargado() {
+        myPage.usuarioValidoDocumentoDescargado();
     }
 }

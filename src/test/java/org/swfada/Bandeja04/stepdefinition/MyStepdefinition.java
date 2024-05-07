@@ -1,9 +1,12 @@
 package org.swfada.Bandeja04.stepdefinition;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import org.swfada.Bandeja04.step.MyStep;
 
 import io.cucumber.java.en.And;
+
+import java.awt.*;
 
 public class MyStepdefinition {
 
@@ -26,7 +29,12 @@ public class MyStepdefinition {
     }
 
     @And("presiono el icono Descargar Dccumentos")
-    public void presionoElIconoDescargarDccumentos() {
+    public void presionoElIconoDescargarDccumentos()throws AWTException {
         myStep.resionoElIconoDescargarDccumentos();
+    }
+
+    @Then("valido el documento descargado")
+    public void validoElDocumentoDescargado() {
+        myStep.validoElDocumentoDescargado();
     }
 }
