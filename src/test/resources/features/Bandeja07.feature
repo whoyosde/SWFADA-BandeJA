@@ -18,7 +18,7 @@ Feature: Plataforma Bandeja
     Then el sistema muestra la ventana Reenvio de la Comunicación
     And selecciono el destino de la comunicación "<destino>"
     When presiono el botón Reenviar
-    Then sistema muestra mensaje de confirmación de reenvío
+    And verifico que el mensaje sea el correcto
 
     Examples:
       | destino                    |

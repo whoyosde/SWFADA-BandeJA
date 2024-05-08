@@ -38,10 +38,8 @@ public class MyStepdefinition {
         myStep.presionoElBotónReenviar();
     }
 
-    @Then("sistema muestra mensaje de confirmación de reenvío")
-    public void sistemaMuestraMensajeDeConfirmaciónDeReenvío() {
-        myStep.sistemaMuestraMensajeDeConfirmaciónDeReenvío();
+    @And("verifico que el mensaje sea el correcto")
+    public void verificoQueElMensajeSeaElCorrecto() {
+        myStep.verificoQueElMensajeSeaElCorrecto();
     }
-
-
 }

@@ -16,5 +16,6 @@ Feature: Plataforma Bandeja
       And selecciono comunicación
       When presiono el icono Asignar
       And presiono el botón Aceptar
+      And verifico el cambio de estado
 
 

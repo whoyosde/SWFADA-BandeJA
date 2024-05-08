@@ -18,21 +18,23 @@ public class MyStep extends ScenarioSteps {
         myPage.usuarioPresionaIconoReenviar();
     }
 
+    @net.thucydides.core.annotations.Step
     public void elSistemaMuestraLaVentanaReenvioDeLaComunicación() {
         myPage.elSistemaMuestraLaVentanaReenvioDeLaComunicación();
     }
 
+    @net.thucydides.core.annotations.Step
     public void seleccionoElDestinoDeLaComunicación(String destinoCo) {
         myPage.usuarioSeleccionaDestinoComunicacion(destinoCo);
     }
 
+    @net.thucydides.core.annotations.Step
     public void presionoElBotónReenviar() {
         myPage.presionoElBotónReenviar();
     }
 
-    public void sistemaMuestraMensajeDeConfirmaciónDeReenvío() {
-        myPage.usuarioVisualizaMensajeConfirmacionReenvio();
+    @net.thucydides.core.annotations.Step
+    public void verificoQueElMensajeSeaElCorrecto() {
+        myPage.usuarioVerificaMensajeSeaCorrecto();
     }
-
-
 }

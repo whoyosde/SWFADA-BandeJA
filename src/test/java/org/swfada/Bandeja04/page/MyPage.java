@@ -50,7 +50,7 @@ public class MyPage extends PageObject {
                 WebElement columnsCodigo = filaSeleccionada.findElement(By.xpath(".//td[5]"));
                 codigo = columnsCodigo.getText();
 
-                String codigoDeseado = "INT/2024/0000000000001342";
+                String codigoDeseado = "INT/2024/0000000000001335";
 
                 if (codigo.equals(codigoDeseado)) {
                     this.codigo = codigo;

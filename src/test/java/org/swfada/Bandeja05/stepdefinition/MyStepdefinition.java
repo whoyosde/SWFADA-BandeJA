@@ -28,4 +28,8 @@ public class MyStepdefinition {
       myStep.presionoElBotónAceptar();
     }
 
+    @And("verifico el cambio de estado")
+    public void verificoElCambioDeEstado() {
+        myStep.verificoElCambioDeEstado();
+    }
 }

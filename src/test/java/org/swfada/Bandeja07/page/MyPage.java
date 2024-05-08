@@ -72,38 +72,12 @@ public class MyPage extends PageObject {
 
     public void presionoElBotónReenviar() {
         btnReenviar.click();
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        WebDriverWait wait1 = new WebDriverWait (getDriver(), 6);
-        try {
-            wait1.wait();
-        }catch (Exception ex){
-
-        }
-        WebElement mensajeAleta = null;
-        int contador=0;
-        do{
-            try {
-                mensajeAleta = getDriver().findElement(By.xpath("//[@id='toast-container']"));
-            }catch (Exception ex) {
-
-            }
-            WebDriverWait wait2 = new WebDriverWait (getDriver(), 1);
-            //Thread.sleep(1000);
-            contador ++;
-        }
-        while (mensajeAleta != null && contador <60);
-        if(mensajeAleta!=null){
-            if(mensajeAleta.getText().equals("Comunicación reenviada correctamente.")){
-                System.out.println("Exito");
-            }else {
-                System.out.println("Error: "+mensajeAleta.getText());
-            }
-        }else{
-            System.out.println("Error: No se muestra el toast");
-        }
-
     }
 
-    public void usuarioVisualizaMensajeConfirmacionReenvio() {
+    public void usuarioVerificaMensajeSeaCorrecto() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"toast toast-success\"]")));
+        WebElement mensaje = getDriver().findElement(By.xpath("//div[@class=\"toast-message\"]"));
+        assertEquals("Comunicación reenviada correctamente.", mensaje.getText());
     }
 }

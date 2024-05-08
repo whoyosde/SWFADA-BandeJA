@@ -15,8 +15,14 @@ public class MyStep extends ScenarioSteps {
     public void presionoElIconoAsignar() {
         myPage.usuarioPresionaIconoAsignar();
     }
+
+    @net.thucydides.core.annotations.Step
     public void presionoElBotónAceptar() {
         myPage.usuarioPresionaBtnAceptar();
     }
 
+    @net.thucydides.core.annotations.Step
+    public void verificoElCambioDeEstado() {
+        myPage.usuarioVerificaCambioEstado();
+    }
 }
