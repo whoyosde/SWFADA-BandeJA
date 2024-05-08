@@ -1,6 +1,8 @@
 package org.swfada.Bandeja01.page;
 
-import net.serenitybdd.core.annotations.findby.FindBy;
+import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -39,12 +42,7 @@ public class MyPage extends PageObject {
     @FindBy(id = "subirAltaDoc")
     private WebElementFacade btnEnviarSinFirma;
 
-    public void ValidarBandeja() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logoBandeja")));
-        WebElement bandeja = getDriver().findElement(By.id("logoBandeja"));
-        assertTrue(bandeja.isDisplayed());
-    }
+    private String asunto;
 
     public void PulsarNuevaComunicacion() {
         WebDriverWait wait = new WebDriverWait(getDriver(), 20);
@@ -63,6 +61,7 @@ public class MyPage extends PageObject {
     public void RegistrarAsunto(String asunto) {
 
         campoAsunto.sendKeys(asunto);
+        this.asunto = asunto;
     }
 
     public void SeleccionarProcedimientoYServicios(String procedimiento) {
@@ -88,7 +87,8 @@ public class MyPage extends PageObject {
     public void SeleccionarDestino(String destino) {
         campoDestino.sendKeys(destino);
         WebElement Destino = getDriver().findElement(By.xpath("//span[contains(text(),'" + destino + "')]"));
-        Destino.click();
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(Destino).click().perform();
     }
 
     public void RegistrarFechaLimite(String fecha) {
@@ -102,11 +102,23 @@ public class MyPage extends PageObject {
     }
 
     public void ValidarMensajeExito() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 20);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
-
         WebElement mensaje = getDriver().findElement(By.xpath("//div[@class=\"toast-message\"]"));
         assertEquals("Se ha creado con éxito la comunicación", mensaje.getText());
-        waitFor(9).second();
+
+    }
+
+    public void ValidarEnvioDeComunicacion() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//table[@id=\"resultadoComunicacionesRecibidas\"]")));
+        // waitFor(9).second();
+        List<WebElement> filas = getDriver().findElements(By.xpath("//table[@id=\"resultadoComunicaciones\"]//tr"));
+        // Iterar sobre cada fila
+        for (WebElement fila : filas) {
+            // Esperar a que el elemento en la columna específica sea visible en esta fila
+            wait.until(ExpectedConditions.visibilityOf(fila.findElement(By.xpath("//td[@class=\"contenido_tabla_portlet truncarColumna \"][contains(text(),' "+ asunto +" ')]"))));
+            Assert.assertTrue(true);
+        }
     }
 }

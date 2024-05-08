@@ -45,4 +45,8 @@ public class MyStepdefinition {
         myStep.presionoElBotonAcceder();
     }
 
+    @Entonces("valido que me encuentro en la plataforma Bandeja")
+    public void ValidoQueMeEncuentroEnLaPlataformaBandeja() {
+        myStep.ValidoQueMeEncuentroEnLaPlataformaBandeja();
+    }
 }

@@ -1,18 +1,15 @@
 package org.swfada.Bandeja01.step;
 
+
+import net.thucydides.core.steps.ScenarioSteps;
 import org.swfada.Bandeja01.page.MyPage;
 
-public class MyStep {
+public class MyStep extends ScenarioSteps {
     MyPage myPage;
 
-    @net.thucydides.core.annotations.Step
-    public void QueMeEncuentroEnBandeja() {
-
-        myPage.ValidarBandeja();
-    }
 
     @net.thucydides.core.annotations.Step
-    public void PresionoLaAcciónNuevaComunicación() {
+    public void QuePresionoLaAcciónNuevaComunicación() {
 
         myPage.PulsarNuevaComunicacion();
     }
@@ -47,7 +44,7 @@ public class MyStep {
     }
 
     @net.thucydides.core.annotations.Step
-    public void SeleccionoElDestinoDeComunicación(String destino) {
+    public void SeleccionoDestinoDeComunicación(String destino) {
 
         myPage.SeleccionarDestino(destino);
     }
@@ -62,9 +59,13 @@ public class MyStep {
     public void presionoElBotonEnviarSinFirma() {
         myPage.PulsarEnviarSinFirma();
     }
-
-    public void validoMensajeDeExito() {
+    @net.thucydides.core.annotations.Step
+    public void SeMuestraMensajeÉxito() {
         myPage.ValidarMensajeExito();
+    }
+
+    public void ValidaQueSeEnvióLaComunicación() {
+        myPage.ValidarEnvioDeComunicacion();
     }
 }
 

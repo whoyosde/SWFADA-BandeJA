@@ -12,19 +12,14 @@ public class MyStepdefinition {
     @Steps
     private MyStep myStep;
 
-    @Dado("que me encuentro en Bandeja")
-    public void QueMeEncuentroEnBandeja() {
 
-        myStep.QueMeEncuentroEnBandeja();
+    @Dado("que presiono la acción nueva comunicación")
+    public void QuePresionoLaAcciónNuevaComunicación() {
+
+        myStep.QuePresionoLaAcciónNuevaComunicación();
     }
 
-    @Cuando("presiono la acción nueva comunicación")
-    public void PresionoLaAcciónNuevaComunicación() {
-
-        myStep.PresionoLaAcciónNuevaComunicación();
-    }
-
-    @Entonces("se muestra el modal Alta de comunicación")
+    @Cuando("se muestra el modal Alta de comunicación")
     public void SeMuestraElModalAltaDeComunicación() {
 
         myStep.SeMuestraElModalAltaDeComunicación();
@@ -53,10 +48,10 @@ public class MyStepdefinition {
         myStep.AdjuntoDocumento();
     }
 
-    @Y("selecciono el destino de comunicación {string}")
-    public void SeleccionoElDestinoDeComunicación(String destino) {
+    @Y("selecciono destino de comunicación {string}")
+    public void SeleccionoDestinoDeComunicación(String destino) {
 
-        myStep.SeleccionoElDestinoDeComunicación(destino);
+        myStep.SeleccionoDestinoDeComunicación(destino);
     }
 
     @Y("resgitro la fecha limite {string}")
@@ -64,15 +59,22 @@ public class MyStepdefinition {
         myStep.ResgitroLaFechaLimite(fecha);
     }
 
-    @Cuando("presiono el boton Enviar sin firma")
+    @Y("presiono el boton Enviar sin firma")
     public void presionoElBotonEnviarSinFirma() {
 
         myStep.presionoElBotonEnviarSinFirma();
     }
 
-    @Entonces("valido mensaje de exito")
-    public void validoMensajeDeExito() {
+    @Y("se muestra mensaje éxito")
+    public void SeMuestraMensajeÉxito() {
 
-        myStep.validoMensajeDeExito();
+        myStep.SeMuestraMensajeÉxito();
+    }
+
+
+    @Entonces("valida que se envió la comunicación")
+    public void ValidaQueSeEnvióLaComunicación() {
+        myStep.ValidaQueSeEnvióLaComunicación();
+
     }
 }

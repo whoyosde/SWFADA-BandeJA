@@ -2,7 +2,7 @@ package org.swfada.Login.page;
 
 import lombok.Builder;
 import net.bytebuddy.implementation.bind.annotation.Default;
-import net.serenitybdd.core.annotations.findby.FindBy;
+import org.openqa.selenium.support.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.junit.Assert.assertTrue;
 
 @DefaultUrl("/bandejapru/inicio/indicarInstalacion.action")
 
@@ -61,4 +63,10 @@ public class MyPage extends PageObject {
         btnAcceder.click();
     }
 
+    public void ValidarPlataformaBandeja() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logoBandeja")));
+        WebElement bandeja = getDriver().findElement(By.id("logoBandeja"));
+        assertTrue(bandeja.isDisplayed());
+    }
 }
