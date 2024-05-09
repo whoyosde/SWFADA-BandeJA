@@ -10,13 +10,8 @@ public class MyStep extends ScenarioSteps {
     private MyPage myPage;
 
     @net.thucydides.core.annotations.Step
-    public void seleccionoUnaComunicaciónDeLaLista() {
+    public void ingresoALaInformaciónDetalladaDeUnaComunicación() {
         myPage.usuarioSeleccionaComunicacionLista();
-    }
-
-    @net.thucydides.core.annotations.Step
-    public void presionoElIconoInformaciónDetallada() {
-        myPage.usuarioPresionaIconoInformacionDetallada();
     }
 
     public void elSistemaMuestraLaVentanaInformaciónDetallada() {
@@ -30,4 +25,6 @@ public class MyStep extends ScenarioSteps {
     public void validoElDocumentoDescargado() {
         myPage.usuarioValidoDocumentoDescargado();
     }
+
+
 }
