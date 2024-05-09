@@ -13,14 +13,9 @@ public class MyStepdefinition {
     @Steps
     MyStep myStep;
 
-    @And("selecciono una comunicación de la lista")
-    public void seleccionoUnaComunicaciónDeLaLista() {
-        myStep.seleccionoUnaComunicaciónDeLaLista();
-    }
-
-    @When("presiono el icono Información Detallada")
-    public void presionoElIconoInformaciónDetallada() {
-        myStep.presionoElIconoInformaciónDetallada();
+    @When("ingreso a la información detallada de una comunicación")
+    public void ingresoALaInformaciónDetalladaDeUnaComunicación() {
+        myStep.ingresoALaInformaciónDetalladaDeUnaComunicación();
     }
 
     @And("el sistema muestra la ventana Información Detallada")
@@ -37,4 +32,5 @@ public class MyStepdefinition {
     public void validoElDocumentoDescargado() {
         myStep.validoElDocumentoDescargado();
     }
+
 }
