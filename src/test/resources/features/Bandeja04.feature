@@ -13,10 +13,8 @@ Feature: Plataforma Bandeja
     Then valido que me encuentro en la plataforma Bandeja
 
     Scenario: Descarga de documento zip exitoso
-      And selecciono una comunicación de la lista
-      When presiono el icono Información Detallada
+      When ingreso a la información detallada de una comunicación
       And el sistema muestra la ventana Información Detallada
       And presiono el icono Descargar Dccumentos
       Then valido el documento descargado
-
 
