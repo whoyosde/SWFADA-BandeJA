@@ -9,7 +9,7 @@ import org.swfada.Bandeja02.step.MyStep;
 
 public class MyStepdefinition {
     @Steps
-    MyStep myStep;
+    private MyStep myStep;
 
     @Cuando("presiono en nueva comunicación")
     public void presionoEnNuevaComunicación() {

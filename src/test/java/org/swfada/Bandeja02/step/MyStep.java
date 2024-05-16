@@ -80,17 +80,17 @@ public class MyStep extends ScenarioSteps {
         myPage.SeleccionarFirmanteAdiconal01();
         myPage.SeleccionarFirmanteAdiconal02();
     }
-
+    @net.thucydides.core.annotations.Step
     public void CambioDePosiciónALosFirmantes() {
         myPage.CambiarPosicionAFirmantes();
 
     }
-
+    @net.thucydides.core.annotations.Step
     public void PresionoElBotónEnviarAPortafirmaFinal() {
         myPage.EliminarFirmantesAdicionales();
         myPage.EviarAPortafirma();
     }
-
+    @net.thucydides.core.annotations.Step
     public void SeMuestraElMensajeDeÉxito() {
         myPage.ValidarMensajeDeExito();
     }

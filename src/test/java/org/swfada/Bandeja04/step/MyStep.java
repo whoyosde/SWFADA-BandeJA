@@ -14,14 +14,17 @@ public class MyStep extends ScenarioSteps {
         myPage.usuarioSeleccionaComunicacionLista();
     }
 
+    @net.thucydides.core.annotations.Step
     public void elSistemaMuestraLaVentanaInformaciónDetallada() {
         myPage.usuarioVisualizaVentanaInformacionDetallada();
     }
 
+    @net.thucydides.core.annotations.Step
     public void resionoElIconoDescargarDccumentos()throws AWTException {
         myPage.usuarioPresionaDescargarDocumentos();
     }
 
+    @net.thucydides.core.annotations.Step
     public void validoElDocumentoDescargado() {
         myPage.usuarioValidoDocumentoDescargado();
     }

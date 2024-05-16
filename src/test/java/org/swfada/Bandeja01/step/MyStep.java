@@ -5,7 +5,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.swfada.Bandeja01.page.MyPage;
 
 public class MyStep extends ScenarioSteps {
-    MyPage myPage;
+    private MyPage myPage;
 
 
     @net.thucydides.core.annotations.Step
@@ -64,6 +64,7 @@ public class MyStep extends ScenarioSteps {
         myPage.ValidarMensajeExito();
     }
 
+    @net.thucydides.core.annotations.Step
     public void ValidaQueSeEnvióLaComunicación() {
         myPage.ValidarEnvioDeComunicacion();
     }

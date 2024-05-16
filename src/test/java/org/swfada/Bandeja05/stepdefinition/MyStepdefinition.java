@@ -10,7 +10,7 @@ public class MyStepdefinition {
 
 
     @Steps
-    MyStep myStep;
+    private MyStep myStep;
 
     @And ("selecciono comunicación")
     public void seleccionoComunicación(){

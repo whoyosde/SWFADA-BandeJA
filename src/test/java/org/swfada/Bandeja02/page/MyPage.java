@@ -24,7 +24,6 @@ public class MyPage extends PageObject {
     @FindBy(id = "codigoFirmante_0")
     private WebElementFacade añadirFirmante1;
 
-
     @FindBy(xpath = "//input[@id='descripcionAltaComunicacion']")
     private WebElementFacade txt_asunto;
 

@@ -22,7 +22,7 @@ public class MyStep extends ScenarioSteps {
     public void SeMuestraMensajeDeExito() {
         myPage.ValidarMensajeExito();
     }
-
+    @net.thucydides.core.annotations.Step
     public void ValidoQueNoSeMuestreEnComunicacionesRecibidas() {
         myPage.ValidarFinalizacionComunicacion();
     }

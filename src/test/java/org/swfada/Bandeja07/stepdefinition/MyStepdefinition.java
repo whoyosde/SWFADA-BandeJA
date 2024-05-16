@@ -9,7 +9,7 @@ import org.swfada.Bandeja07.step.MyStep;
 public class MyStepdefinition {
 
     @Steps
-    MyStep myStep;
+    private MyStep myStep;
 
     @And("selecciono una comunicación")
     public void seleccionoUnaComunicación() {

@@ -11,7 +11,7 @@ import java.awt.*;
 public class MyStepdefinition {
 
     @Steps
-    MyStep myStep;
+    private MyStep myStep;
 
     @When("ingreso a la información detallada de una comunicación")
     public void ingresoALaInformaciónDetalladaDeUnaComunicación() {
