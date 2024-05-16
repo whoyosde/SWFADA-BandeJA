@@ -3,6 +3,7 @@ Feature: 007.Reenviar una comunicación.
   Como usuario comun
   Quiero ingresar a la plataforma Bandeja
   Para gestinar las comunicaciones.
+
   Background:
     Given que el usuario ingresa a la plataforma Bandeja
     When se inicia sesión mediante usuario "30268264B" y contraseña "30268264B"
@@ -12,7 +13,7 @@ Feature: 007.Reenviar una comunicación.
     And presiono el boton Acceder
     Then valido que me encuentro en la plataforma Bandeja
 
-  Scenario:Reenvío de comunicación exitosa
+  Scenario Outline: Reenvío de comunicación exitosa
     And selecciono una comunicación
     When presiono el icono Reenviar
     Then el sistema muestra la ventana Reenvio de la Comunicación
@@ -21,5 +22,5 @@ Feature: 007.Reenviar una comunicación.
     And verifico que el mensaje sea el correcto
 
     Examples:
-      | destino                    |
+      | destino                            |
       | AGENCIA DIGITAL DE ANDALUCIA (ADA) |
