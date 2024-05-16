@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
         stepNotifications=true,
         features="src/test/resources/features",
         glue="org.swfada",
-        tags = "@AltaSinFirma or @AltaNuevaComunicacionConFirma or @FinalizarComuncación or @EliminarAsignacion or @DeshacerFinalizado"
+       // tags = "@AltaSinFirma or @AltaNuevaComunicacionConFirma or @FinalizarComuncación or @DescargarDocumentoZip or @AsignarComunicacionEstadoPendiente or @EliminarAsignacion or @ReenviarComunicacion or @DeshacerFinalizado"
+        tags = "@AltaSinFirma"
 
 )
 public class AcceptanceTestSuite {
