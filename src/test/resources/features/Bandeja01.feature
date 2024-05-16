@@ -28,6 +28,6 @@ Característica: 001.Alta de nueva comunicación sin firma
     Entonces valida que se envió la comunicación
     Ejemplos:
       | asunto                     | procedimiento                        | codigo  | destino         | fecha limite |
-      | Prueba de Automatización07 | Indemnización por Razón del Servicio | AUTO123 | D.G. PATRIMONIO | 27/04/2024   |
+      | Prueba de Automatización07 | Indemnización por Razón del Servicio | AUTO123 | D.G. PATRIMONIO | 27/08/2024   |
 
 
