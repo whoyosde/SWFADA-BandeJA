@@ -99,7 +99,7 @@ public class MyPage extends PageObject {
         WebDriverWait wait = new WebDriverWait(getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id=\"resultadoComunicacionesRecibidas\"]//tbody/tr[1]")));
 
-        List<WebElement> filas = getDriver().findElements(By.tagName("tr"));
+        List<WebElement> filas = getDriver().findElements(By.xpath("//table[@id=\"resultadoComunicacionesRecibidas\"]//tbody/tr"));
         boolean buscado = false;
         for (int i = 0; i < filas.size(); i++) {
             WebElement row = filas.get(i);

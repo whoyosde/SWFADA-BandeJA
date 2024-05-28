@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features="src/test/resources/features",
         glue="org.swfada",
        // tags = "@AltaSinFirma or @AltaNuevaComunicacionConFirma or @FinalizarComuncación or @DescargarDocumentoZip or @AsignarComunicacionEstadoPendiente or @EliminarAsignacion or @ReenviarComunicacion or @DeshacerFinalizado"
-        tags = "@AltaSinFirma"
+        tags = "@AltaNuevaComunicacionConFirma or @EliminarAsignacion"
 
 )
 public class AcceptanceTestSuite {

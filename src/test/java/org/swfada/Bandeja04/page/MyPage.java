@@ -85,7 +85,7 @@ public class MyPage extends PageObject {
         try {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
-            waitFor(10).seconds();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("mensaje" + e.getMessage());
@@ -93,7 +93,7 @@ public class MyPage extends PageObject {
     }
 
     public void usuarioValidoDocumentoDescargado() {
-
+        waitFor(10).seconds();
         //String downloadPath = "C:\\Users\\lmanriqp\\Downloads";
         String downloadPath = "C:\\Users\\whoyosde\\Downloads";
         // Obtener lista de archivos en el directorio de descargas

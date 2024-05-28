@@ -42,6 +42,12 @@ public class MyPage extends PageObject {
     @FindBy(id = "subirAltaDoc")
     private WebElementFacade btnEnviarSinFirma;
 
+    @FindBy(xpath = "//a[@aria-label=\"Texto documentos\"]")
+    private WebElementFacade pestañaMensaje;
+
+    @FindBy(xpath = "//textarea[@name=\"textoDoc\"]")
+    private WebElementFacade campoMensaje;
+
     private String asunto;
 
     public void PulsarNuevaComunicacion() {
@@ -77,9 +83,13 @@ public class MyPage extends PageObject {
     }
 
     public void AdjuntarDocumento() {
+        /*Actions actions = new Actions(getDriver());
+        actions.moveToElement(pestañaMensaje).click().perform();
+        campoMensaje.waitUntilClickable();
+        campoMensaje.sendKeys("DOC01");*/
+
         // Específica la ruta absoluta del archivo que deseas subir
         File file = new File("C:\\Users\\whoyosde\\Documents\\ADA\\DOC01.pdf");
-
         // Envía la ruta del archivo al elemento de entrada de archivo
         adjuntarDoc.sendKeys(file.getAbsolutePath());
     }
@@ -117,7 +127,7 @@ public class MyPage extends PageObject {
         // Iterar sobre cada fila
         for (WebElement fila : filas) {
             // Esperar a que el elemento en la columna específica sea visible en esta fila
-            wait.until(ExpectedConditions.visibilityOf(fila.findElement(By.xpath("//td[@class=\"contenido_tabla_portlet truncarColumna \"][contains(text(),' "+ asunto +" ')]"))));
+            wait.until(ExpectedConditions.visibilityOf(fila.findElement(By.xpath("//td[@class=\"contenido_tabla_portlet truncarColumna \"][contains(text(),' " + asunto + " ')]"))));
             Assert.assertTrue(true);
         }
     }

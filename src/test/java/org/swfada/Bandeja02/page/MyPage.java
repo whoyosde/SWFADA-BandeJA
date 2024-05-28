@@ -69,12 +69,17 @@ public class MyPage extends PageObject {
     @FindBy(xpath = "//*[@id=\"rowAdd_1\"]/td[6]/img")
     private WebElementFacade eliminarAdcional01;
 
-
     @FindBy(xpath = "//div[@id=\"submitbuttonAltaDoc\"]/button[@id=\"subirPortaFDoc\"]")
     private WebElementFacade btnEnviarPortafirmaFinal;
 
     @FindBy(xpath = "//div[@class=\"toast toast-success\"]/div")
     private WebElementFacade mensaje;
+
+    @FindBy(xpath = "//a[@aria-label=\"Texto documentos\"]")
+    private WebElementFacade pestañaMensaje;
+
+    @FindBy(xpath = "//textarea[@name=\"textoDoc\"]")
+    private WebElementFacade campoMensaje;
 
     private String nombreFirmante;
 
@@ -103,10 +108,16 @@ public class MyPage extends PageObject {
     }
 
     public void usuarioIngresaCodigoExpediente(String codigoExpediente) {
+        txt_codigoExpedienteRelacionado.click();
         txt_codigoExpedienteRelacionado.sendKeys(codigoExpediente);
     }
 
     public void usuarioAnexaDocumento() {
+        /*Actions actions = new Actions(getDriver());
+        actions.moveToElement(pestañaMensaje).click().perform();
+        campoMensaje.waitUntilClickable();
+        campoMensaje.sendKeys("DOC01");*/
+
         // Específica la ruta absoluta del archivo que deseas subir
         File file = new File("C:\\Users\\whoyosde\\Documents\\ADA\\DOC01.pdf");
 
@@ -191,22 +202,34 @@ public class MyPage extends PageObject {
     }
 
     public void CambiarPosicionAFirmantes() {
-        WebElement elementoOrigen = getDriver().findElement(By.xpath("//tr[@id=\"rowAdd_3\"]"));
+       //waitFor(3).second();
+      //  WebDriverWait wait = new WebDriverWait(getDriver(), 20);
+       // WebElement elementoOrigen = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[@id='rowAdd_3']")));
+       // WebElement elementoDestino = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[@id='rowAdd_1']")));
 
-        WebElement elementoDestino = getDriver().findElement(By.xpath("//tr[@id=\"rowAdd_1\"]"));
+        WebElement elementoOrigen = getDriver().findElement(By.id("rowAdd_3"));
+
+        WebElement elementoDestino = getDriver().findElement(By.id("rowAdd_1"));
 
         Actions actions = new Actions(getDriver());
         // Arrastrar y soltar el elemento desde el origen al destino
-        actions.moveToElement(elementoOrigen).clickAndHold().moveToElement(elementoDestino).release().build().perform();
+       // actions.dragAndDrop(elementoOrigen, elementoDestino).perform();
+        actions.moveToElement(elementoOrigen)
+                .clickAndHold()
+                .moveToElement(elementoDestino)
+                .release()
+                .build()
+                .perform();
         WebDriverWait wait = new WebDriverWait(getDriver(), 20);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id=\"nombreFirmanteAdd_1\"][@value=\"RAFAEL CABELLO GARCIA\"]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id=\"nombreFirmanteAdd_1\"][@value=\"RAFAEL CABELLO GARCIA\"]")));
         //Localizar nuevo destino despues que se cambia de posición
         elementoOrigen = getDriver().findElement(By.xpath("//tr[@id=\"rowAdd_3\"]"));
         WebElement elementoDestino2 = getDriver().findElement(By.xpath("//tr[@id=\"rowAdd_2\"]"));
         Actions actions2 = new Actions(getDriver());
         // Arrastrar y soltar el elemento desde el origen al destino
         actions2.moveToElement(elementoOrigen).clickAndHold().moveToElement(elementoDestino2).release().build().perform();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id=\"nombreFirmanteAdd_2\"][@value=\"RAQUEL BRIONES LEON\"]")));
+        waitFor(3).second();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id=\"nombreFirmanteAdd_2\"][@value=\"RAQUEL BRIONES LEON\"]")));
     }
 
     public void EliminarFirmantesAdicionales() {
@@ -238,6 +261,5 @@ public class MyPage extends PageObject {
         assertEquals("Las comunicaciones se han creado correctamente y se han enviado los documentos seleccionados a Port@firmas.", mensaje.getText());
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div/input[@id=\"codigoExpedienteFiltro\"]")));
         //waitFor(10).second();
-
     }
 }

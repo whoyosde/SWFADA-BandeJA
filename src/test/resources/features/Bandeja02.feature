@@ -5,7 +5,7 @@ Característica: 002.Alta de nueva comunicación con firma
   Quiero ingresar a la plataforma Bandeja
   Para gestionar las comunicaciones.
 
-  Antecedentes: :
+  Antecedentes:
     Dado que el usuario ingresa a la plataforma Bandeja
     Cuando se inicia sesión mediante usuario "30268264B" y contraseña "30268264B"
     Y presiono el boton Entrar
@@ -30,8 +30,8 @@ Característica: 002.Alta de nueva comunicación con firma
     Cuando presione el botón Buscar
     Y selecciono el firmante buscado
     Entonces se muestra el firmante en la sección Firmantes del documento
-    Y selecciono el resto de firmantes
-    Cuando cambio de posición a los firmantes
+   # Y selecciono el resto de firmantes
+   # Cuando cambio de posición a los firmantes
     Y presiono el botón Enviar a Portafirma Final
     Entonces se muestra el mensaje de éxito
 
